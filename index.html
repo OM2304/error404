@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MEP AI BIM System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <h1>Autodesk Tools: MEP AI Clash Detection System</h1>
+    <p>Industry BIM Workflow Dashboard</p>
+</div>
+
+<!-- SECTION 1 -->
+<div class="section blue">
+    <h2>1. BIM Model Input (Revit)</h2>
+
+    <table>
+        <tr>
+            <th>Feature</th>
+            <th>Description</th>
+            <th>Relevance</th>
+        </tr>
+
+        <tr>
+            <td>.RVT File</td>
+            <td>3D BIM model containing MEP data</td>
+            <td>Input for clash detection system</td>
+        </tr>
+
+        <tr>
+            <td>MEP Elements</td>
+            <td>Pipes, ducts, cable trays</td>
+            <td>Objects analyzed for conflicts</td>
+        </tr>
+
+        <tr>
+            <td>Parameters</td>
+            <td>Size, diameter, offset, system type</td>
+            <td>Used for AI comparison logic</td>
+        </tr>
+    </table>
+</div>
+
+<!-- SECTION 2 -->
+<div class="section green">
+    <h2>2. Clash Detection Pipeline (Navisworks Style)</h2>
+
+    <div class="flow">
+        <div>Revit Model</div>
+        <div>Export IFC/NWC</div>
+        <div>Aggregation</div>
+        <div>AI Clash Engine</div>
+        <div>Report</div>
+        <div>Fix in Model</div>
+    </div>
+</div>
+
+<!-- SECTION 3 -->
+<div class="section orange">
+    <h2>3. AI Clash Detection Results</h2>
+
+    <table id="clashTable">
+        <tr>
+            <th>Clash ID</th>
+            <th>Type</th>
+            <th>Element A</th>
+            <th>Element B</th>
+            <th>Location</th>
+            <th>Status</th>
+        </tr>
+
+        <tr>
+            <td>101</td>
+            <td>Pipe-Duct</td>
+            <td>Pipe_12</td>
+            <td>Duct_7</td>
+            <td>(10.5, 22.3, 5.1)</td>
+            <td class="red">Clash Detected</td>
+        </tr>
+
+        <tr>
+            <td>102</td>
+            <td>Cable-Beam</td>
+            <td>Cable_12</td>
+            <td>Beam_8</td>
+            <td>(14.2, 18.1, 6.0)</td>
+            <td class="green">Solved</td>
+        </tr>
+
+        <tr>
+            <td>103</td>
+            <td>Pipe-Pipe</td>
+            <td>Pipe_205</td>
+            <td>Pipe_210</td>
+            <td>(9.8, 12.4, 3.2)</td>
+            <td class="yellow">Pending</td>
+        </tr>
+    </table>
+</div>
+
+<!-- SECTION 4 -->
+<div class="section dark">
+    <h2>4. AI Assistant Panel</h2>
+
+    <input id="msg" placeholder="Ask AI about clashes...">
+    <button onclick="askAI()">Send</button>
+
+    <div id="chat"></div>
+</div>
+
+</body>
+<script>
+function addClash() {
+    let table = document.getElementById("clashTable");
+
+    let newRow = table.insertRow();
+
+    let clashID = Math.floor(Math.random() * 1000);
+    
+    newRow.innerHTML = `
+        <td>${clashID}</td>
+        <td>Pipe-Duct</td>
+        <td>Pipe_${clashID}</td>
+        <td>Duct_${clashID+1}</td>
+        <td>(12.4, 8.2, 5.0)</td>
+        <td class="red">Clash Detected</td>
+    `;
+}
+</script>
+</html>
