@@ -16,8 +16,9 @@
 </div>
 
 <!-- SECTION 1 -->
-<div class="section blue">
+<div class="section blue" id="dropZone">
     <h2>1. BIM Model Input (Revit)</h2>
+    <input type="file" id="ifcFileInput" accept=".ifc" style="display: none;">
 
     <table>
         <tr>
@@ -31,21 +32,21 @@
             <td>.RVT File</td>
             <td>3D BIM model containing MEP data</td>
             <td>Input for clash detection system</td>
-            <td><button>Upload ➕</button></td>
+            <td><button class="upload-btn">Upload ➕</button></td>
         </tr>
 
         <tr>
             <td>MEP Elements</td>
             <td>Pipes, ducts, cable trays</td>
             <td>Objects analyzed for conflicts</td>
-            <td><button>Upload ➕</button></td>
+            <td><button class="upload-btn">Upload ➕</button></td>
         </tr>
 
         <tr>
             <td>Parameters</td>
             <td>Size, diameter, offset, system type</td>
             <td>Used for AI comparison logic</td>
-            <td><button>Upload ➕</button></td>
+            <td><button class="upload-btn">Upload ➕</button></td>
         </tr>
     </table>
 </div>

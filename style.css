@@ -85,6 +85,11 @@
         color:white;
         border:none;
         margin-left:10px;
+        cursor: pointer;
+    }
+
+    button:hover{
+        opacity: 0.9;
     }
 
     #chat{
@@ -92,4 +97,11 @@
         padding:10px;
         background:#1f2937;
         border-radius:8px;
+    }
+
+    /* DRAG & DROP FEEDBACK */
+    .drag-over {
+        border: 2px dashed #102A71;
+        background-color: #eef2ff !important;
+        transition: all 0.3s ease;
     }
