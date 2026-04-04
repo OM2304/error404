@@ -12,6 +12,7 @@
 <div class="header">
     <h1>Autodesk Tools: MEP AI Clash Detection System</h1>
     <p>Industry BIM Workflow Dashboard</p>
+    a
 </div>
 
 <!-- SECTION 1 -->
@@ -63,45 +64,164 @@
 </div>
 
 <!-- SECTION 3 -->
+<!-- SECTION 3 -->
 <div class="section orange">
     <h2>3. AI Clash Detection Results</h2>
 
     <table id="clashTable">
         <tr>
             <th>Clash ID</th>
-            <th>Type</th>
-            <th>Element A</th>
-            <th>Element B</th>
-            <th>Location</th>
+            <th>Clash Type</th>
+            <th>Element A (Detailed Data)</th>
+            <th>Element B (Detailed Data)</th>
+            <th>Clash Location</th>
             <th>Status</th>
         </tr>
 
         <tr>
             <td>101</td>
-            <td>Pipe-Duct</td>
-            <td>Pipe_12</td>
-            <td>Duct_7</td>
+            <td>Pipe - Duct</td>
+
+            <td>
+                <details>
+                    <summary>Pipe_12</summary>
+                    <pre>
+{
+  "element_id": "P-12",
+  "type": "Pipe",
+  "system_type": "Cold Water Supply",
+  "diameter": 50,
+  "length": 3200,
+  "material": "PVC",
+  "insulation_thickness": 0,
+  "level": "Level 1",
+  "offset": 2400,
+  "start_point": {"x": 5000, "y": 3000, "z": 2400},
+  "end_point": {"x": 8200, "y": 3000, "z": 2400}
+}
+                    </pre>
+                </details>
+            </td>
+
+            <td>
+                <details>
+                    <summary>Duct_7</summary>
+                    <pre>
+{
+  "element_id": "D-7",
+  "type": "Duct",
+  "system_type": "HVAC Supply",
+  "width": 300,
+  "height": 200,
+  "material": "GI",
+  "level": "Level 1",
+  "offset": 2450,
+  "start_point": {"x": 5100, "y": 3000, "z": 2450},
+  "end_point": {"x": 8200, "y": 3000, "z": 2450}
+}
+                    </pre>
+                </details>
+            </td>
+
             <td>(10.5, 22.3, 5.1)</td>
-            <td class="red">Clash Detected</td>
+
+            <td class="red">
+                Clash Detected <br>
+                <small>Type: Hard Clash</small>
+            </td>
         </tr>
 
         <tr>
             <td>102</td>
-            <td>Cable-Beam</td>
-            <td>Cable_12</td>
-            <td>Beam_8</td>
+            <td>Cable - Beam</td>
+
+            <td>
+                <details>
+                    <summary>Cable_12</summary>
+                    <pre>
+{
+  "element_id": "C-12",
+  "type": "Cable Tray",
+  "system_type": "Electrical",
+  "width": 100,
+  "material": "Aluminium",
+  "level": "Level 2",
+  "offset": 2600
+}
+                    </pre>
+                </details>
+            </td>
+
+            <td>
+                <details>
+                    <summary>Beam_8</summary>
+                    <pre>
+{
+  "element_id": "B-8",
+  "type": "Structural Beam",
+  "material": "Steel",
+  "level": "Level 2",
+  "start_point": {"x": 14000, "y": 18000, "z": 6000},
+  "end_point": {"x": 16000, "y": 18000, "z": 6000}
+}
+                    </pre>
+                </details>
+            </td>
+
             <td>(14.2, 18.1, 6.0)</td>
-            <td class="green">Solved</td>
+
+            <td class="green">
+                Solved <br>
+                <small>Type: Clearance Issue</small>
+            </td>
         </tr>
 
         <tr>
             <td>103</td>
-            <td>Pipe-Pipe</td>
-            <td>Pipe_205</td>
-            <td>Pipe_210</td>
+            <td>Pipe - Pipe</td>
+
+            <td>
+                <details>
+                    <summary>Pipe_205</summary>
+                    <pre>
+{
+  "element_id": "P-205",
+  "type": "Pipe",
+  "system_type": "Fire Fighting",
+  "diameter": 100,
+  "material": "Steel",
+  "level": "Basement",
+  "offset": 3200
+}
+                    </pre>
+                </details>
+            </td>
+
+            <td>
+                <details>
+                    <summary>Pipe_210</summary>
+                    <pre>
+{
+  "element_id": "P-210",
+  "type": "Pipe",
+  "system_type": "Drainage",
+  "diameter": 80,
+  "material": "PVC",
+  "level": "Basement",
+  "offset": 3100
+}
+                    </pre>
+                </details>
+            </td>
+
             <td>(9.8, 12.4, 3.2)</td>
-            <td class="yellow">Pending</td>
+
+            <td class="yellow">
+                Pending <br>
+                <small>Type: Soft Clash</small>
+            </td>
         </tr>
+
     </table>
 </div>
 
