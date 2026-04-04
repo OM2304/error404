@@ -24,14 +24,12 @@ def detect_clashes(elements):
             b = elements[j]
 
             if is_clash(a["bounding_box"], b["bounding_box"]):
-                center = get_center(a["bounding_box"])
-
                 clashes.append({
                     "id": len(clashes) + 1,
                     "type": f"{a['type']} - {b['type']}",
                     "A": a,
                     "B": b,
-                    "location": center,
+                    "location": get_center(a["bounding_box"]),
                     "status": "Hard Clash"
                 })
 
