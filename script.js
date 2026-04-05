@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const uploadBtns = document.querySelectorAll('.upload-btn');
     const dropZone = document.getElementById('dropZone');
 
-    // 1. Click upload button to open file manager
+    // 1. Click upload button to open file man
     uploadBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             fileInput.click();
