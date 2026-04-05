@@ -80,16 +80,32 @@
     }
 
     button{
-        padding:10px;
-        background:#102A71;
-        color:white;
-        border:none;
-        margin-left:10px;
+        padding: 10px 20px;
+        background: #102A71;
+        color: white;
+        border: none;
+        margin-left: 10px;
         cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: bold;
+        transition: background 0.3s;
+    }
+
+    .plus-icon {
+        color: #a78bfa; /* Purple-ish color for the + icon */
+        font-size: 1.2em;
+        font-weight: bold;
     }
 
     button:hover{
-        opacity: 0.9;
+        background: #1e40af;
+    }
+
+    button:disabled {
+        background: #6b7280;
+        cursor: not-allowed;
     }
 
     #chat{
