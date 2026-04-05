@@ -13,9 +13,6 @@ export default {
       },
     },
     extend: {
-      fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -64,7 +61,11 @@ export default {
           hard: "hsl(var(--clash-hard))",
           soft: "hsl(var(--clash-soft))",
           clearance: "hsl(var(--clash-clearance))",
-          resolved: "hsl(var(--clash-resolved))",
+        },
+        status: {
+          resolved: "hsl(var(--status-resolved))",
+          pending: "hsl(var(--status-pending))",
+          active: "hsl(var(--status-active))",
         },
       },
       borderRadius: {
